@@ -1,0 +1,131 @@
+\ProvidesPackage{beamerthemeUH}  % this style was created by Philippe Dreuw and Thomas Deselaers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{cmyk}
+%\useinnertheme{default}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{UHEmerald}{cmyk}{0.66,0.24,0.43,0.70}
+\definecolor{UHBurgundy}{cmyk}{0.53,0.81,0.26,0.83}
+\definecolor{UHCharcoal}{cmyk}{0.38,0.35,0.33,0.92}
+\definecolor{UHBlack}{cmyk}{0.00,0.00,0.00,1.00}
+
+\definecolor{UHDarkBlue}{cmyk}{1.00,0.95,0.04,0.42}
+\definecolor{UHCyan}{cmyk}{0.76,0,0.05,0}
+\definecolor{UHMint}{cmyk}{0.27,0.00,0.21,0.00}
+\definecolor{UHLimeGreen}{cmyk}{0.48,0.00,0.94,0.00}
+
+\definecolor{UHCoolGrey}{cmyk}{0.12,0.08,0.08,0.23}
+\definecolor{UHWarmGrey}{cmyk}{0.16,0.23,0.23,0.44}
+\definecolor{UHStone}{cmyk}{0.11,0.13,0.30,0.32}
+
+\setbeamercolor{headline}{fg=white,bg=UHBlack}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=UHCoolGrey}
+\setbeamercolor{institute in headline}{fg=UHCoolGrey}
+\setbeamercolor{separation line}{fg=UHCoolGrey}
+
+\setbeamercolor{footline}{fg=UHCoolGrey, bg=white}
+\setbeamerfont{footline}{size=\LARGE}
+\setbeamercolor{lower separation line foot}{fg=UHCoolGrey, bg=white}
+\setbeamercolor{upper separation line foot}{fg=UHCoolGrey, bg=white}
+\setbeamercolor{author in head/foot}{fg=UHCoolGrey, bg=UHEmerald}
+\setbeamercolor{title in head/foot}{fg=UHCoolGrey, bg=UHEmerald}
+
+\setbeamercolor*{block body}{fg=black, bg=white}
+\setbeamercolor*{block title}{bg=UHEmerald, fg=white}
+\setbeamerfont{block title}{size=\LARGE}
+\setbeamerfont{block body}{size=\large}
+
+%\setbeamercolor*{alerted text}{fg=Red}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+%\setbeamerfont{itemize/enumerate body}{size=\large}
+%\setbeamerfont{itemize/enumerate subbody}{parent=itemize/enumerate body}
+%\setbeamerfont{itemize/enumerate subbody}{parent=itemize/enumerate body}
+\setbeamertemplate{itemize/enumerate body begin}{\large}
+\setbeamertemplate{itemize/enumerate subbody begin}{\large}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\large}
+
+\setbeamertemplate{enumerate item}{\large\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\large\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{%
+    \large\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{300mm}
+        \vskip2.0cm
+        \includegraphics[keepaspectratio,width=276mm]{images/uherts_21218929437}
+      \end{column}
+      \begin{column}{530mm}
+        \vskip4ex
+        \raggedleft
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\}
+        \vskip3ex
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\}
+        \vskip2ex
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+        \vskip2ex
+      \end{column}
+      \begin{column}{10mm}
+        \vskip1cm
+        \vskip1.5cm
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+      \texttt{\LARGE http://www.herts.ac.uk}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      \texttt{\LARGE something@herts.ac.uk}
+    \end{beamercolorbox}}%
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End:
