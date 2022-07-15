@@ -52,7 +52,7 @@
         \begin{block}{1. Data and pre-processing}
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=\linewidth]{images/1-preproc.png}
+                \includegraphics[width=0.9\linewidth]{images/bernstein2022_abstract_top.pdf}
                 \label{fig:preproc}
             \end{figure}
             \centering{
@@ -62,20 +62,20 @@
                     Preprocessing:
                     \begin{itemize}
                         \small{
-                        \item brain extraction
-                        \item spatial smoothing
+                        \item Brain extraction
+                        \item Spatial smoothing
                         \item ICA-AROMA~\cite{Pruim2015} noise removal
                         \item AAL2~\cite{Rolls2015} motor cortex signal extraction
                     }
                     \end{itemize}
                 \end{column}
-                \begin{column}{0.49\textwidth}
-                    Topology of time window correlation
+                \begin{column}{0.45\textwidth}
+                    Topology of BOLD sliding window correlations
                     \begin{itemize}
                         \small{
-                        \item correlation window size: 11 seconds
-                        \item sequence of persistence homology characteristic for each of correlation windows
-                        \item pairwise Wasserstein distance of persistence characteristics
+                        \item Correlation window size: 11 seconds
+                        \item Compute the order complex (a simplicial complex) from the matrix of correlations, and obtain persistent homology 
+                        \item Obtain pairwise Wasserstein distances for birth-death diagrams corresponding to time points
                         }
                     \end{itemize}
                 \end{column}
@@ -100,11 +100,31 @@
 
     % ===-===-===-===-===-===-===-===-===-===-  
     \begin{block}{3. Differences in topological characteristic distributions}
-    \begin{figure}[H]
-        \centering
-          \includegraphics[width=0.8\linewidth]{images/distributions.pdf}
-        \label{fig:distros}
-    \end{figure}
+    \begin{columns}
+            \begin{column}{0.25\textwidth}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=\linewidth]{images/matrix_comparison.pdf}
+                    \label{fig:distros}
+                \end{figure}
+                \begin{itemize}
+                \small{
+                    \item MSC: distribution of Wasserstein distance matrix computed for a motor task, voxels from motor cortex
+                    \item Shuffle: time series shuffling of fMRI recording
+                    \item Geometric: pairwise Euclidean distance of samples from n-dimensional unit cube
+                    }
+                \end{itemize}
+                % }
+            \end{column}
+            \begin{column}{0.70\textwidth}
+                \begin{figure}[H]
+                    \centering
+                      \includegraphics[width=\linewidth]{images/distributions.pdf}
+                    \label{fig:distros}
+                \end{figure}
+            \end{column}
+            
+    \end{columns}
     \end{block}
     
     \begin{block}{4. Summary}
@@ -114,10 +134,10 @@
                 \textbf{Results:}
                 \begin{itemize}
                 \small{
-                    \item some of the task transitions are correlated in time with the occurrence of higher-ordered topological structures
-                    \item we hypothesise that those high-dimensional topological structures are related to the brain state transitions
-                    \item  not all transitions are accompanied by immediate formation of those structures 
-                    \item the consecutive simplicial complexes are strikingly different
+                    \item Some of the task transitions are correlated in time with the occurrence of higher-ordered topological structures
+                    \item We hypothesise that those high-dimensional topological structures are related to the brain state transitions
+                    \item  Not all transitions are accompanied by immediate formation of those structures 
+                    \item The consecutive simplicial complexes are strikingly different
                 }
                 \end{itemize}
             
@@ -126,9 +146,9 @@
                 \textbf{Conclusions:}
                 \begin{itemize}
                 \small{
-                    \item first application of high-dimensional topology in the study of dynamics of the brain activity
-                    \item focus on analysis of the functional connectomics of individuals using just a single recording
-                    \item better understanding of the differences between individuals’ brain functional connectivities
+                    \item First application of high-dimensional topology in the study of dynamics of brain activity
+                    \item This topological method enables analysis of the functional connectomics of individuals using just a single recording, unlike most standard pipelines for the analysis of fMRI data.
+                    \item Better understanding of the differences between individuals’ brain functional connectivities
                 }
                 \end{itemize}
             
